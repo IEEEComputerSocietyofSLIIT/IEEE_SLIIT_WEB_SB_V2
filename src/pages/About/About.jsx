@@ -1,7 +1,7 @@
 import React from 'react'
 import './About.css'
-import { AboutCardsInfo, OurValuesInfo } from '../AboutCards/AboutCards';
-import { AboutCards } from '../AboutCards/AboutCards';
+import { AboutCardsInfo, OurValuesInfo } from '../../components/AboutCards/AboutCards'
+import { AboutCards } from '../../components/AboutCards/AboutCards';
 
 export const About = () => {
   return (
