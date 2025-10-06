@@ -28,9 +28,9 @@ export const Footer = () => {
 
   return (
     <footer className="bg-slate-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-7xl mx-auto px-12 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          <div className="space-y-4">
+          <div className="space-y-4 w-[355px]">
             <div className="flex items-center space-x-3">
               <img src={IeeeLogoWhite} alt="IEEE Logo" className="w-[305px]" />
             </div>
@@ -97,7 +97,7 @@ export const Footer = () => {
         </div>
 
       </div>
-      <div className="border-t border-slate-800 p-5">
+      <div className="border-t border-slate-800 p-4 mt-[-15px]">
           <p className="text-center text-sm text-gray-500">
             © 2025 IEEECS — All rights reserved
           </p>
