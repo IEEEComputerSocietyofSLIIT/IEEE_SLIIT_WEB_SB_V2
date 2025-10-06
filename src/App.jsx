@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Navbar } from "./components/Navbar";
+import { Navbar } from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
-import { About } from "./pages/About";
+import { About } from "./pages/About/About";
 import { Contact } from "./pages/Contact";
 import { Footer } from "./components/Footer";
 
@@ -19,7 +19,7 @@ function App() {
         </Routes>
       </main>
 
-      <Footer/>
+      
     </div>
   );
 }

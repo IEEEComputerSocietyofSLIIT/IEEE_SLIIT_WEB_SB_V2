@@ -1,0 +1,115 @@
+.about__us {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, #003F7F, #0066CC, #0066CC);
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__us__s1 h1 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 72px;
+    line-height: 60px;
+    padding: 25px;
+    padding-top: 35px;
+}
+
+.about__us__s1 p {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 33px;
+    letter-spacing: 0%;
+    padding-bottom: 60px;
+    margin-bottom: 30px;
+}
+
+.about__us__s2 {
+    background-color: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: -60px;
+    padding: 40px;
+}
+
+.about__us__s2__sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 5%;
+}
+
+.our__values {
+    position: relative;
+    bottom: 0px;
+    background-color: #1A75D10D;
+    padding-bottom: 20px;
+}
+
+.our__values__s1 {
+    text-align: center;
+    padding: 40px;
+}
+
+.our__values__s1 h1 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: 0%;
+}
+
+.our__values__s1 p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    margin-bottom: 20px;
+}
+
+.our__values__s2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    gap: 5%;
+    flex-wrap: wrap;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+    .about__us {
+        padding: 40px;
+    }
+
+    .about__us__s1 h1 {
+        font-size: 36px;
+        line-height: 40px;
+        padding: 10px;
+    }
+
+    .about__us__s1 p {
+        font-size: 18px;
+        line-height: 22px;
+        padding-bottom: 30px;
+        margin-bottom: 20px;
+    }
+
+    .about__us__s2 {
+        padding: 20px;
+    }
+
+    .about__us__s2__sub {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .our__values__s2{
+        margin: 20px;
+    }
+}
