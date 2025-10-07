@@ -27,14 +27,14 @@ export const Footer = () => {
   const designers = ["Ruvindi Randeniya", "Amasha Prabuddi", "Hesara Perera"];
 
   return (
-    <footer className="bg-slate-900 text-gray-300">
+    <footer className="bg-[#111827] text-gray-300">
       <div className="max-w-7xl mx-auto px-12 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          <div className="space-y-4 w-[355px]">
+          <div className="space-y-4 w-[305px]">
             <div className="flex items-center space-x-3">
               <img src={IeeeLogoWhite} alt="IEEE Logo" className="w-[305px]" />
             </div>
-            <p className="text-sm leading-relaxed text-gray-400">
+            <p className="text-base leading-relaxed text-[#9CA3AF]">
             IEEE is the world’s largest professional association advancing innovation and technological excellence for the benefit of humanity.
             </p>
           </div>
@@ -48,7 +48,7 @@ export const Footer = () => {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                    className="text-[#9CA3AF] hover:text-white transition-colors duration-200 text-base"
                   >
                     {link.label}
                   </a>
@@ -68,7 +68,7 @@ export const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
+                    className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-200"
                     aria-label={social.label}
                   >
                     <Icon className="w-5 h-5" />
@@ -80,25 +80,25 @@ export const Footer = () => {
         </div>
 
         <div className="space-y-1">
-          <p className="text-center text-sm text-gray-400">
+          <p className="text-center text-base text-[#9CA3AF] font-bold">
           An initiative by the IEEE Computer Society Student Branch Chapter of SLIIT   
           </p>
-          <p className="text-center text-sm text-gray-400">
-            Lead By: <span className="text-gray-300">Heshan Gimhana</span>
+          <p className="text-center text-base text-[#9CA3AF]">
+            Lead By: Heshan Gimhana
           </p>
-          <p className="text-center text-sm text-gray-400">
+          <p className="text-center text-base text-[#9CA3AF]">
             Designed By:{" "}
-            <span className="text-gray-300">{designers.join(", ")}</span>
+            {designers.join(", ")}
           </p>
-          <p className="text-center text-sm text-gray-400">
+          <p className="text-center text-base text-[#9CA3AF]">
             Developed By:{" "}
-            <span className="text-gray-300">{developers.join(", ")}</span>
+            {developers.join(", ")}
           </p>
         </div>
 
       </div>
       <div className="border-t border-slate-800 p-4 mt-[-15px]">
-          <p className="text-center text-sm text-gray-500">
+          <p className="text-center text-base text-[#9CA3AF]">
             © 2025 IEEECS — All rights reserved
           </p>
         </div>
