@@ -170,20 +170,6 @@ export default function ContactPage() {
 
             <div>
               <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number (e.g. +94719955200)"
-                value={formData.phone}
-                onChange={handleInputChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
-                  errors.phone ? 'border-red-500' : 'border-gray-300 focus:ring-blue-600'
-                }`}
-              />
-              {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
-            </div>
-
-            <div>
-              <input
                 type="text"
                 name="subject"
                 placeholder="Subject"
