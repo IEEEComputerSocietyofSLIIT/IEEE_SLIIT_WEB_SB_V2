@@ -5,9 +5,13 @@ import cardData from '../../components/HomeCards/CardData';
 import { HomeCards } from '../../components/HomeCards/HomeCards';
 import homeLogoImg from '../../assets/images/logo-home.png';
 import circleDesign from '../../assets/images/circle.png';
+import AwardCards from '../../components/AwardCards/AwardCards';
+import { AwardCardsInfo } from '../../components/AwardCards/awardsInfo';
 
 
 export const Home = () => {
+
+
   return (
     <>
       <div className='home'>
@@ -51,6 +55,31 @@ export const Home = () => {
           <img className='home__content__s2__sub__img1' src={circleDesign} alt="Circle-Design" />
           <img className='home__content__s2__sub__img2' src={circleDesign} alt="Circle-Design" />
         </div>
+      </div>
+
+      <div className='hc_archievements'>
+
+      <div className='hc_archievements__s1'>
+          <h1>Our Achievements</h1>
+          <p>Celebrating milestones that showcase our dedication to excellence, innovation, and community impact
+          </p>
+        </div>
+
+        <div className='hc_archievements__s2'>
+      <div className='hc_archievements__s2__grid'>
+        {AwardCardsInfo.map((award, index) => (
+          <AwardCards
+            key={index}
+            icon={award.icon}
+            year={award.year}
+            title={award.title}
+            organization={award.organization}
+            description={award.description}
+          />
+        ))}
+      </div>
+    </div>
+
       </div>
 
     </>
