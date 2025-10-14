@@ -3,6 +3,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    z-index: 10;
 }
 
 .navbar__s1__logo img {
@@ -64,6 +68,7 @@
         position: fixed;
         top: 80px;
         width: 100%;
+        z-index: 10;
     }
 
     .responsive__navbar button {
