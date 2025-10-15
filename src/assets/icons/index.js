@@ -7,8 +7,9 @@ import leadership from "./leadership_icon.png"
 import mission from "./mission_icon.png"
 import vission from "./vision_icon.png"
 
+import * as SvgIcons from "./SvgIcons"
 
- const Icons = {
+const Icons = {
     menubar,
     close, 
     collaboration,
@@ -16,8 +17,8 @@ import vission from "./vision_icon.png"
     innovation,
     leadership,
     mission,
-    vission
+    vission,
+    ...SvgIcons
 }
-
 
 export default Icons
