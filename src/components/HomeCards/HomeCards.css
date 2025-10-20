@@ -1,0 +1,27 @@
+.home__cards {
+    border-radius: 8px;
+    background: rgba(41, 56, 56, 0.46);
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+    z-index: 4;
+    width: 20%;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+    .home__cards {
+        width: 150px;
+        padding: 15px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .home__cards {
+        width: 150px;
+        padding: 15px;
+        font-size: 8px;
+    }
+}
