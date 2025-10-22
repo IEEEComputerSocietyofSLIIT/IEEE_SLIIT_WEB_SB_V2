@@ -78,22 +78,46 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+    <div className="min-h-screen">
+      {/* Hero Section - Matching About Page Gradient */}
+      <div 
+        className="text-white"
+        style={{
+          width: '100%',
+          height: '400px',
+          background: 'linear-gradient(135deg, #003F7F, #0066CC, #0066CC)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center'
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Let's Get in Touch</h1>
-          <p className="text-lg text-blue-100">
+          <p className="text-lg opacity-90">
             Get in touch with us. We're here to help and answer any questions you might have.
           </p>
         </div>
       </div>
 
       {/* Contact Info Cards */}
-      <div className="max-w-7xl mx-auto px-4 -mt-12">
+      <div 
+        className="mx-auto px-4"
+        style={{
+          backgroundColor: 'white',
+          borderTopLeftRadius: '40px',
+          borderTopRightRadius: '40px',
+          marginTop: '-60px',
+          paddingTop: '40px',
+          paddingBottom: '40px'
+        }}
+      >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-            <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div 
+              className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              style={{ backgroundColor: '#003F7F' }}
+            >
               <MapPin className="text-white" size={28} />
             </div>
             <h3 className="font-bold text-gray-900 mb-3">Address</h3>
@@ -106,21 +130,35 @@ export default function ContactPage() {
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-            <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div 
+              className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              style={{ backgroundColor: '#003F7F' }}
+            >
               <Phone className="text-white" size={28} />
             </div>
             <h3 className="font-bold text-gray-900 mb-3">Phone</h3>
-            <a href="tel:+94719955200" className="text-blue-600 hover:underline">
+            <a 
+              href="tel:+94719955200" 
+              className="hover:underline"
+              style={{ color: '#0066CC' }}
+            >
               +94 71 995 5200
             </a>
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-            <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div 
+              className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              style={{ backgroundColor: '#003F7F' }}
+            >
               <Mail className="text-white" size={28} />
             </div>
             <h3 className="font-bold text-gray-900 mb-3">Email</h3>
-            <a href="mailto:sliit.ieee@gmail.com" className="text-blue-600 hover:underline">
+            <a 
+              href="mailto:sliit.ieee@gmail.com" 
+              className="hover:underline"
+              style={{ color: '#0066CC' }}
+            >
               sliit.ieee@gmail.com
             </a>
           </div>
@@ -147,8 +185,9 @@ export default function ContactPage() {
                   value={formData.fullName}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
-                    errors.fullName ? 'border-red-500' : 'border-gray-300 focus:ring-blue-600'
+                    errors.fullName ? 'border-red-500' : 'border-gray-300'
                   }`}
+                  style={!errors.fullName ? { focusRing: '#0066CC' } : {}}
                 />
                 {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}
               </div>
@@ -161,7 +200,7 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
-                    errors.email ? 'border-red-500' : 'border-gray-300 focus:ring-blue-600'
+                    errors.email ? 'border-red-500' : 'border-gray-300'
                   }`}
                 />
                 {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
@@ -176,7 +215,7 @@ export default function ContactPage() {
                 value={formData.subject}
                 onChange={handleInputChange}
                 className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
-                  errors.subject ? 'border-red-500' : 'border-gray-300 focus:ring-blue-600'
+                  errors.subject ? 'border-red-500' : 'border-gray-300'
                 }`}
               />
               {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject}</p>}
@@ -190,7 +229,7 @@ export default function ContactPage() {
                 onChange={handleInputChange}
                 rows="6"
                 className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 resize-none ${
-                  errors.message ? 'border-red-500' : 'border-gray-300 focus:ring-blue-600'
+                  errors.message ? 'border-red-500' : 'border-gray-300'
                 }`}
               />
               {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
@@ -199,7 +238,13 @@ export default function ContactPage() {
             <div className="text-center">
               <button
                 onClick={handleSubmit}
-                className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition inline-flex items-center space-x-2"
+                className="text-white px-8 py-3 rounded-lg transition inline-flex items-center space-x-2"
+                style={{ 
+                  backgroundColor: '#0066CC',
+                  hover: { backgroundColor: '#003F7F' }
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#003F7F'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#0066CC'}
               >
                 <span>Send Message</span>
                 <Mail size={18} />
