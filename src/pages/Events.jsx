@@ -13,27 +13,27 @@ export default function EventsPage() {
   const eventMemories = [
     {
       id: 1,
-      image:eventImages.SLIITXtremeOC ,
+      image:eventImages.Agm25 ,
       alt: 'Event 1'
     },
     {
       id: 2,
-      image: eventImages.SLIITXtremeOC,
+      image: eventImages.extreme3,
       alt: 'Event 2'
     },
     {
       id: 3,
-      image: eventImages.SLIITXtremeOC,
+      image: eventImages.Agm25,
       alt: 'Event 3'
     },
     {
       id: 4,
-      image: eventImages.SLIITXtremeOC,
+      image: eventImages.cybershield4,
       alt: 'Event 4'
     },
     {
       id: 5,
-      image: eventImages.SLIITXtremeOC,
+      image: eventImages.extreme3,
       alt: 'Event 5'
     }
   ];
