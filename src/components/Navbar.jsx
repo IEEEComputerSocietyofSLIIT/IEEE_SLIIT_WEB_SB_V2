@@ -26,14 +26,16 @@ export const Navbar = () => {
             <Link to="/" className="text-gray-700 hover:text-blue-600 transition">Home</Link>
             <Link to="/about" className="text-gray-700 hover:text-blue-600 transition">About Us</Link>
             <Link to="/events" className="text-gray-700 hover:text-blue-600 transition">Events</Link>
-            <Link to="/chapters" className="text-gray-700 hover:text-blue-600 transition">Chapters</Link>
+            {/* <Link to="/chapters" className="text-gray-700 hover:text-blue-600 transition">Chapters</Link> */}
             <Link to="/committee" className="text-gray-700 hover:text-blue-600 transition">Committee</Link>
             <Link to="/contact" className="text-gray-700 hover:text-blue-600 transition">Contact Us</Link>
           </div>
 
           {/* Right Join Button & Mobile Menu Button */}
           <div className="flex items-center space-x-2">
-            <button className="hidden md:block bg-teal-500 text-white px-6 py-2 rounded-full hover:bg-teal-600 transition">
+            <button 
+            onClick={()=>{window.open("https://forms.fillout.com/t/pZwz6iZ95hus", "_blank");}}
+            className="hidden md:block bg-teal-500 text-white px-6 py-2 rounded-full hover:bg-teal-600 transition">
               Join Now
             </button>
             <button

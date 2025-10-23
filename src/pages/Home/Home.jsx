@@ -25,7 +25,7 @@ export const Home = () => {
           <h1 style={{ color: "#07B492" }}>Branch</h1>
           <h1>SLIIT</h1>
           <div className="home__s3__sub">
-            <button className="home__s3__sub__btn1">Join Now</button>
+            <button onClick={()=>{window.open("https://forms.fillout.com/t/pZwz6iZ95hus", "_blank");}} className="home__s3__sub__btn1">Join Now</button>
             <button className="home__s3__sub__btn2">Learn More</button>
           </div>
           <div className="home__s3__sub__cards">

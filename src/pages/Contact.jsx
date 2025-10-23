@@ -237,25 +237,19 @@ export default function ContactPage() {
 
         <div className="space-y-2 sm:space-y-3">
           {FAQ_ITEMS.map((item, idx) => (
-            <div key={idx} className="border rounded-md overflow-hidden">
+            <div key={idx} className="border border-gray-300 rounded-md overflow-hidden bg-white">
               <button
-                onClick={handleSubmit}
-                className="text-white px-8 py-3 rounded-lg transition inline-flex items-center space-x-2"
-                style={{ 
-                  backgroundColor: '#0066CC',
-                  hover: { backgroundColor: '#003F7F' }
-                }}
-                onMouseEnter={(e) => e.target.style.backgroundColor = '#003F7F'}
-                onMouseLeave={(e) => e.target.style.backgroundColor = '#0066CC'}
+                onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                className="w-full px-3 sm:px-4 py-3 sm:py-4 flex items-center justify-between hover:bg-gray-50 transition"
               >
-                <span className="text-gray-700 text-sm sm:text-base">{item.q}</span>
-                <span className="text-[#0b64c7]">
+                <span className="text-gray-700 text-sm sm:text-base text-left font-medium">{item.q}</span>
+                <span className="text-[#0b64c7] flex-shrink-0 ml-2">
                   {openFaq === idx ? <X size={18} /> : <Plus size={18} />}
                 </span>
               </button>
 
               {openFaq === idx && (
-                <div className="px-3 sm:px-4 py-3 sm:py-4 bg-gray-50 text-gray-700 text-xs sm:text-sm">
+                <div className="px-3 sm:px-4 py-3 sm:py-4 bg-gray-50 text-gray-700 text-xs sm:text-sm border-t border-gray-200">
                   <p>{item.a}</p>
                 </div>
               )}
