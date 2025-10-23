@@ -55,7 +55,7 @@ export default function EventsPage() {
       eventName: "Get your merchandise",
       category: "Get your merchandise",
       description: "Elevate your style with the official IEEE SLIIT merchandise! From trendy t-shirts and hoodies to practical tote bags and exclusive accessories.",
-      image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&h=300&fit=crop",
+      image: eventImages.merch,
       registerLink: "#",
       startDate: "2024-11-20",
       endDate: "2024-11-20"
@@ -65,7 +65,7 @@ export default function EventsPage() {
       eventName: "CellSpell",
       category: "CellSpell",
       description: "CellSpell is the perfect confluence of biology and technology. It educates the students with knowledge on cells while enhancing their memory and understanding.",
-      image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop",
+      image: eventImages.cellspell,
       registerLink: "#",
       startDate: "2024-12-01",
       endDate: "2024-12-01"

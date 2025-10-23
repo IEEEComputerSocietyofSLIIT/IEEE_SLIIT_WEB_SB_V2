@@ -107,7 +107,7 @@ const CHAPTER_CHAIRS = [
     chapter: 'IEEE Engineering in Medicine and Biology Society',
     bgColor: '#c3ffb4ff',
     iconBg: '#6eff4aff',
-    image: null,
+    image: ChairImages.EMBS,
     linkedin: 'https://linkedin.com/in/dinush-wijesooara'
   }
 ];
