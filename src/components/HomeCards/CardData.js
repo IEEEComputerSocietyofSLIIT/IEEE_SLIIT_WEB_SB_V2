@@ -5,8 +5,8 @@ const cardData = [
         count: "500+",
     },
     {
-        heading: "Awards Won",
-        count: "25+",
+        heading: "Active Chapters",
+        count: "6+",
     },
     {
         heading: "Projects Completed",

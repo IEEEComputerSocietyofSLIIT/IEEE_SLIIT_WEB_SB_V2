@@ -23,7 +23,7 @@ export const Home = () => {
         <div className="home__s3">
           <h1>IEEE Student</h1>
           <h1 style={{ color: "#07B492" }}>Branch</h1>
-          <h1>SLIIT</h1>
+          <h1>of SLIIT</h1>
           <div className="home__s3__sub">
             <button onClick={()=>{window.open("https://forms.fillout.com/t/pZwz6iZ95hus", "_blank");}} className="home__s3__sub__btn1">Join Now</button>
             <button className="home__s3__sub__btn2">Learn More</button>
@@ -89,7 +89,7 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="hc_archievements">
+      {/* <div className="hc_archievements">
         <div className="hc_archievements__s1">
           <h1>Our Achievements</h1>
           <p>
@@ -112,7 +112,7 @@ export const Home = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
