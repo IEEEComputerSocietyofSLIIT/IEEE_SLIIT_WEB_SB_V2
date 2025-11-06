@@ -13,9 +13,9 @@ export const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative h-[55vh] sm:h-[60vh] md:h-[70vh] lg:h-[90vh] min-h-[400px] sm:min-h-[450px] md:min-h-[500px] max-h-[550px] md:max-h-[650px] lg:max-h-[750px] overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full">
+      <div className="relative w-full overflow-hidden">
+        {/* Background Image Container */}
+        <div className="absolute inset-0 w-full h-full min-h-[700px] sm:min-h-[600px] md:h-[70vh] lg:h-[90vh] md:max-h-[650px] lg:max-h-[750px]">
           <img 
             src={headerImg} 
             alt="Home-Header-Image" 
@@ -26,23 +26,23 @@ export const Home = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-4 sm:px-6">
-          <div className="flex flex-col items-center justify-center text-center">
+        <div className="relative z-10 w-full px-4 sm:px-6 py-8 sm:py-12 md:py-16 lg:py-0 min-h-[700px] sm:min-h-[600px] md:h-[70vh] lg:h-[90vh] md:max-h-[650px] lg:max-h-[750px] flex items-center justify-center">
+          <div className="flex flex-col items-center justify-center text-center w-full">
             {/* Title */}
-            <div className=" mb-6 sm:mb-8 md:mb-10">
-              <h1 className="mt-10 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-wide drop-shadow-2xl text-white">
+            <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-wide drop-shadow-2xl text-white">
                 IEEE Student
               </h1>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-tight tracking-wide drop-shadow-2xl text-[#0FB2B2]">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-tight tracking-wide drop-shadow-2xl text-[#0FB2B2]">
                 Branch
               </h1>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-wide drop-shadow-2xl text-white">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-wide drop-shadow-2xl text-white">
                 of SLIIT
               </h1>
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 md:mb-10 w-full sm:w-auto px-4 sm:px-0">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-5 sm:mb-6 md:mb-8 lg:mb-10 w-full max-w-xs sm:max-w-none sm:w-auto">
               <button 
                 onClick={() => {window.open("https://forms.fillout.com/t/pZwz6iZ95hus", "_blank");}}
                 className="bg-white text-[#00629B] px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-bold text-sm sm:text-base md:text-lg shadow-lg hover:bg-[#0FB2B2] hover:cursor-pointer hover:text-white transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
@@ -54,11 +54,23 @@ export const Home = () => {
               </button>
             </div>
 
-            {/* Cards */}
-            <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 w-full max-w-6xl px-2 mb-8 sm:mb-12 md:mb-16">
-              {cardData.map((item, index) => (
-                <HomeCards key={index} heading={item.heading} count={item.count} />
-              ))}
+            {/* Cards - Responsive Layout */}
+            <div className="w-full max-w-6xl px-2">
+              {/* Mobile: 2 columns grid */}
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 md:hidden">
+                {cardData.map((item, index) => (
+                  <div key={index} className="w-full min-w-0">
+                    <HomeCards heading={item.heading} count={item.count} />
+                  </div>
+                ))}
+              </div>
+              
+              {/* Tablet and Desktop: Original flex wrap layout */}
+              <div className="hidden md:flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8">
+                {cardData.map((item, index) => (
+                  <HomeCards key={index} heading={item.heading} count={item.count} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -81,7 +93,7 @@ export const Home = () => {
           </div>
 
           {/* Content Card */}
-          <div className="relative bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 max-w-5xl mx-auto backdrop-blur-sm">
+          <div className="relative bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 max-w-5xl mx-auto backdrop-blur-sm overflow-hidden">
             <img 
               src={homeLogoImg} 
               alt="IEEE-Logo" 

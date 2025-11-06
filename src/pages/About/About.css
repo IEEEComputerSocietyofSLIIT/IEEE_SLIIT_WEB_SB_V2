@@ -285,7 +285,88 @@
     font-weight: 700;
     color: #003F7F;
   }
-  
+
+  /* Add these hover effects to your About.css file */
+
+/* About Cards Hover Effects */
+.about__us__s2__sub > div,
+.our__values__s2 > div {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about__us__s2__sub > div:hover,
+.our__values__s2 > div:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Community Action Cards Hover Effects */
+.our_com_action_item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.our_com_action_item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.our_com_action_item:hover .our_com_action_item_img img {
+  transform: scale(1.05);
+}
+
+.our_com_action_item_img {
+  overflow: hidden;
+}
+
+.our_com_action_item_img img {
+  transition: transform 0.4s ease;
+}
+
+/* Timeline Item Hover Effects */
+.timeline__item {
+  transition: transform 0.2s ease;
+}
+
+.timeline__item:hover {
+  transform: scale(1.02);
+}
+
+.timeline__content {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline__item:hover .timeline__content {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.timeline__icon {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.timeline__item:hover .timeline__icon {
+  transform: rotate(360deg) scale(1.1);
+}
+
+/* Add subtle fade-in effect for text on hover */
+.our_com_action_item_details h3,
+.our_com_action_item_details p {
+  transition: color 0.2s ease;
+}
+
+.our_com_action_item:hover .our_com_action_item_details h3 {
+  opacity: 0.9;
+}
+
+/* Timeline year hover effect */
+.timeline__year span {
+  transition: transform 0.2s ease, font-weight 0.2s ease;
+}
+
+.timeline__item:hover .timeline__year span {
+  transform: scale(1.05);
+  font-weight: 600;
+}
 
 @media screen and (max-width: 768px) {
     .about__us {
