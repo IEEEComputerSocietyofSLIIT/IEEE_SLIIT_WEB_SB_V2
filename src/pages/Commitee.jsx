@@ -15,42 +15,42 @@ const EXECUTIVE_COMMITTEE = [
     name: 'Mahdy Nawfar',
     position: 'Chairperson',
     image: ExcomImages.chairperson,
-    linkedin: 'https://linkedin.com/in/manoj-hettler'
+    linkedin: 'https://www.linkedin.com/in/mahdyabdullahnawfar/'
   },
   {
     id: 2,
     name: 'Chathumina Kalatuwage',
     position: 'Vice Chairperson',
     image: ExcomImages.viceChairperson,
-    linkedin: 'https://linkedin.com/in/chaithanya-kaluarachchi'
+    linkedin: 'https://www.linkedin.com/in/chathumina-k-077808249/'
   },
   {
     id: 3,
     name: 'Senujee Wickramasooriya',
     position: 'Secretary',
     image: ExcomImages.secretary,
-    linkedin: 'https://linkedin.com/in/senuja-wickramasinghe'
+    linkedin: 'https://www.linkedin.com/in/senujee-wickramasooriya-96260a2ba/'
   },
   {
     id: 4,
     name: 'Mandira Polgampala',
     position: 'Asst.Secretary',
     image: ExcomImages.asstSecretary,
-    linkedin: 'https://linkedin.com/in/mandira-peliagoda'
+    linkedin: 'https://www.linkedin.com/in/mandira-polgampala-969a86281/'
   },
   {
     id: 5,
     name: 'Harindu Mallawaarachchi',
     position: 'Treasurer',
     image: ExcomImages.Treasurer,
-    linkedin: 'https://linkedin.com/in/harisha-malawarachchi'
+    linkedin: 'https://www.linkedin.com/in/harindu-mallawaarachchi/'
   },
   {
     id: 6,
     name: 'Kaveen Pasindumal',
     position: 'Webmaster',
     image: ExcomImages.Webmaster,
-    linkedin: 'https://linkedin.com/in/kasun-peirishamal'
+    linkedin: 'https://www.linkedin.com/in/kaveenpsnd/'
   }
 ];
 
