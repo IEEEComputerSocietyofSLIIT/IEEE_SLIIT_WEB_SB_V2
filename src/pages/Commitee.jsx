@@ -6,6 +6,7 @@ import volunteerImages from '../assets/images/Teams/Volunteer';
 import financeImages from '../assets/images/Teams/Finance';
 import publicityImages from '../assets/images/Teams/Publicity';
 import membershipImages from '../assets/images/Teams/MembershipDevelop';
+import editorialImages from '../assets/images/Teams/Editorial';
 
 // Fake API data for Executive Committee
 const EXECUTIVE_COMMITTEE = [
@@ -152,6 +153,15 @@ const TEAMS_DATA = [
       { id: 1, name: 'Thavisha Dewmith', position: 'Team Lead', image: volunteerImages.thavisha, linkedin: 'https://www.linkedin.com/in/thavisha-dewmith-25324b216/' },
       { id: 2, name: 'K.P Yeshan', position: 'Team Member', image: volunteerImages.yeshan, linkedin: '#' },
       { id: 3, name: 'Sunjai Kajendrajith', position: 'Team Member', image: volunteerImages.sunjai, linkedin: 'https://www.linkedin.com/in/sunjai-kajendrajith-944a25215?utm_source=share_via&utm_content=profile&utm_medium=member_android' }
+    ]
+  },
+  {
+    id: 6,
+    teamName: 'Editorial Team',
+    members: [
+      { id: 1, name: 'Isira Sahanjith', position: 'Team Lead', image: editorialImages.isira, linkedin: 'http://www.linkedin.com/in/isira-sahanjith' },
+      { id: 2, name: 'Shagash Karthigeson', position: 'Team Member', image: editorialImages.shagash, linkedin: 'https://www.linkedin.com/in/shagash-karthigeson?utm_source=share_via&utm_content=profile&utm_medium=member_ios' },
+      { id: 3, name: 'Supun Dharmaratne', position: 'Team Member', image: editorialImages.supun, linkedin: 'https://www.linkedin.com/in/supun-dharmaratne-41b7ab379' }
     ]
   }
 ];
