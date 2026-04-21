@@ -1,56 +1,62 @@
 import React, { useState, useEffect } from 'react';
 import { User, Linkedin } from 'lucide-react';
 import ExcomImages from '../assets/images/Excom';
-import editorialImages from '../assets/images/Teams/Editorial';
 import ChairImages from '../assets/images/Chairs';
 import volunteerImages from '../assets/images/Teams/Volunteer';
 import financeImages from '../assets/images/Teams/Finance';
 import publicityImages from '../assets/images/Teams/Publicity';
-import logisticImages from '../assets/images/Teams/Logistics';
+import membershipImages from '../assets/images/Teams/MembershipDevelop';
 
 // Fake API data for Executive Committee
 const EXECUTIVE_COMMITTEE = [
   {
     id: 1,
-    name: 'Mahdy Nawfar',
+    name: 'Chathumina Kalatuwage',
     position: 'Chairperson',
     image: ExcomImages.chairperson,
-    linkedin: 'https://www.linkedin.com/in/mahdyabdullahnawfar/'
-  },
-  {
-    id: 2,
-    name: 'Chathumina Kalatuwage',
-    position: 'Vice Chairperson',
-    image: ExcomImages.viceChairperson,
     linkedin: 'https://www.linkedin.com/in/chathumina-k-077808249/'
   },
   {
-    id: 3,
-    name: 'Senujee Wickramasooriya',
-    position: 'Secretary',
-    image: ExcomImages.secretary,
-    linkedin: 'https://www.linkedin.com/in/senujee-wickramasooriya-96260a2ba/'
+    id: 2,
+    name: 'Senethmi Wickramanayake',
+    position: 'Vice Chairperson',
+    image: ExcomImages.viceChairperson,
+    linkedin: '#'
   },
   {
-    id: 4,
+    id: 3,
     name: 'Mandira Polgampala',
-    position: 'Asst.Secretary',
-    image: ExcomImages.asstSecretary,
+    position: 'Secretary',
+    image: ExcomImages.secretary,
     linkedin: 'https://www.linkedin.com/in/mandira-polgampala-969a86281/'
   },
   {
-    id: 5,
-    name: 'Harindu Mallawaarachchi',
+    id: 4,
+    name: 'Shageeshan Thamodharam',
     position: 'Treasurer',
     image: ExcomImages.Treasurer,
-    linkedin: 'https://www.linkedin.com/in/harindu-mallawaarachchi/'
+    linkedin: '#'
+  },
+  {
+    id: 5,
+    name: 'Thisula Lewhan',
+    position: 'Webmaster',
+    image: ExcomImages.Webmaster,
+    linkedin: '#'
   },
   {
     id: 6,
-    name: 'Kaveen Pasindumal',
-    position: 'Webmaster',
-    image: ExcomImages.Webmaster,
-    linkedin: 'https://www.linkedin.com/in/kaveenpsnd/'
+    name: 'Nethuli Dahamna Hettiarachchi',
+    position: 'Asst. Secretary',
+    image: ExcomImages.asstSecretary,
+    linkedin: '#'
+  },
+  {
+    id: 7,
+    name: 'Zakee Nowfal',
+    position: 'Asst. Treasurer',
+    image: ExcomImages.asstTreasurer,
+    linkedin: '#'
   }
 ];
 
@@ -58,103 +64,94 @@ const EXECUTIVE_COMMITTEE = [
 const CHAPTER_CHAIRS = [
   {
     id: 1,
-    name: 'Azri Muhsim',
-    chapter: 'Computer Society',
+    name: 'Hesara Perera',
+    chapter: 'IEEE Computer Society',
     bgColor: '#E3F2FD',
     iconBg: '#2196F3',
     image: ChairImages.CS,
-    linkedin: 'https://linkedin.com/in/azni-nazath'
+    linkedin: '#'
   },
   {
     id: 2,
-    name: 'Ranjuka Kumarasiri',
+    name: 'Achira Karunarathne',
     chapter: 'IEEE Robotics and Automation Society',
     bgColor: '#fdcaffff',
     iconBg: '#c70285ff',
-    image: null,
-    linkedin: 'https://linkedin.com/in/kavedu-wirakus'
+    image: ChairImages.RAS,
+    linkedin: '#'
   },
   {
     id: 3,
-    name: 'Hafsa Zainab',
-    chapter: 'IEEE Industrial Applications Society',
+    name: 'Shafkhan Mohammed',
+    chapter: 'IEEE Industry Applications Society',
     bgColor: '#F3E5F5',
     iconBg: '#9C27B0',
     image: ChairImages.IAS,
-    linkedin: 'https://linkedin.com/in/vihda-wirayudha'
+    linkedin: '#'
   },
   {
     id: 4,
-    name: 'Owadhi Bandara',
-    chapter: 'IEEE Women In Engineering',
+    name: 'Pehansa Jaindi Ranasinghe',
+    chapter: 'IEEE Women in Engineering',
     bgColor: '#FCE4EC',
     iconBg: '#E91E63',
     image: ChairImages.WIE,
-    linkedin: 'https://linkedin.com/in/yashoda-abegunthy'
+    linkedin: '#'
   },
   {
     id: 5,
-    name: 'Sasitha Sandharuwan',
-    chapter: 'IEEE Power & Energy Society',
+    name: 'Janitha Mayadunna',
+    chapter: 'IEEE Power and Energy Society',
     bgColor: '#FFF9C4',
     iconBg: '#FBC02D',
     image: ChairImages.PES,
-    linkedin: 'https://linkedin.com/in/dinush-wijesooara'
+    linkedin: '#'
   },
   {
     id: 6,
-    name: 'Heshan kodithuwakku',
+    name: 'Dayanita Goonewardane',
     chapter: 'IEEE Engineering in Medicine and Biology Society',
     bgColor: '#c3ffb4ff',
     iconBg: '#6eff4aff',
     image: ChairImages.EMBS,
-    linkedin: 'https://linkedin.com/in/dinush-wijesooara'
+    linkedin: '#'
   }
 ];
 
 // Fake API data for Teams
 const TEAMS_DATA = [
   {
-    id: 1,
-    teamName: 'Editorial Team',
-    members: [
-      { id: 1, name: 'Chamika Lakshan', position: 'Leader', image: editorialImages.leader, linkedin: 'https://linkedin.com/in/chandni-lalithan' },
-      { id: 2, name: 'Isira Sahanjith', position: 'Member', image: editorialImages.member1, linkedin: 'https://linkedin.com/in/nish-ekanayth' },
-      { id: 3, name: 'Kavinga Aluvihare', position: 'Member', image: editorialImages.member2, linkedin: 'https://linkedin.com/in/kashiga-aludhara' }
-    ]
-  },
-  {
     id: 2,
-    teamName: 'Publicity Team',
+    teamName: 'Public Visibility Team',
     members: [
-      { id: 1, name: 'Thisuri Peiris', position: 'Leader', image: publicityImages.leader, linkedin: 'https://linkedin.com/in/thisara-perera' },
-      { id: 2, name: 'Niruna Karunarathne', position: 'Member', image: publicityImages.member1, linkedin: 'https://linkedin.com/in/nirosi-karunarathne' },
-      { id: 3, name: 'Thisula Lewhan', position: 'Member', image: publicityImages.member2, linkedin: 'https://linkedin.com/in/thisara-leekan' }
+      { id: 1, name: 'Sithumya Dilruni', position: 'Team Lead', image: publicityImages.sithumya, linkedin: '#' },
+      { id: 2, name: 'Daham Jayakody', position: 'Team Member', image: publicityImages.daham, linkedin: '#' },
+      { id: 3, name: 'Yasith Tharuka', position: 'Team Member', image: publicityImages.yasith, linkedin: '#' }
     ]
   },
   {
     id: 3,
     teamName: 'Finance Team',
     members: [
-      { id: 1, name: 'Kaveen Hettiarachchi', position: 'Leader', image: financeImages.leader, linkedin: 'https://linkedin.com/in/kaveen-hettiarachchi' }
+      { id: 1, name: 'Yasiru Binuwara', position: 'Team Member', image: financeImages.yasiru, linkedin: '#' },
+      { id: 2, name: 'Savinath Udawaththa', position: 'Team Member', image: financeImages.savinath, linkedin: '#' }
     ]
   },
   {
     id: 4,
-    teamName: 'Logistics Team',
+    teamName: 'Membership Development Team',
     members: [
-      { id: 1, name: 'Linal de zoysa', position: 'Leader', image: logisticImages.leader, linkedin: 'https://linkedin.com/in/lisad-du-zoysa' },
-      { id: 2, name: 'HATHIM M.J.M', position: 'Member', image: logisticImages.member1, linkedin: 'https://linkedin.com/in/harsha-mjm' },
-      { id: 3, name: 'Kusal Senevirathna', position: 'Member', image: logisticImages.member2, linkedin: 'https://linkedin.com/in/kasul-seevadiththa' }
+      { id: 1, name: 'Thevinu Premathilaka', position: 'Team Lead', image: membershipImages.thevinu, linkedin: '#' },
+      { id: 2, name: 'Lakitha Keshan Gunawantha', position: 'Team Member', image: null, linkedin: '#' }
     ]
   },
   {
     id: 5,
     teamName: 'Volunteer Management Team',
     members: [
-      { id: 1, name: 'Shahaam Marzook', position: 'Leader', image: volunteerImages.leader, linkedin: 'https://linkedin.com/in/shakindu-nimesh' },
-      { id: 2, name: 'Ruwanya Athukorala', position: 'Member', image: volunteerImages.member1, linkedin: 'https://linkedin.com/in/ranunya-shihabudu' },
-      { id: 3, name: 'Thavisha Wimalarathne', position: 'Member', image: volunteerImages.member2, linkedin: 'https://linkedin.com/in/thanuka-jayasingha' }
+      { id: 1, name: 'Thavisha Dewmith', position: 'Team Lead', image: volunteerImages.thavisha, linkedin: '#' },
+      { id: 2, name: 'K.P Yeshan', position: 'Team Member', image: volunteerImages.yeshan, linkedin: '#' },
+      { id: 3, name: 'Sunjai Kajendrajith', position: 'Team Member', image: volunteerImages.sunjai, linkedin: '#' }
     ]
   }
 ];

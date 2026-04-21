@@ -1,11 +1,11 @@
-import leader from "./leader.jpg";
-import member1 from "./member1.jpg";
-import member2 from "./member2.jpg";
+import sithumya from "./IMG_8522.JPG - sithumya hewage (sithu).jpeg";
+import daham from "./DSC_0628 - Daham Jayakody.jpg";
+import yasith from "./Yasith_Tharuka - Yasith Tharuka.png";
 
 const publicityImages = {
-leader,
-member1,
-member2
+sithumya,
+daham,
+yasith
 };
 
 export default publicityImages;
