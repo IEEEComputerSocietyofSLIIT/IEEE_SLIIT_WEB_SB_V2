@@ -21,14 +21,14 @@ const EXECUTIVE_COMMITTEE = [
     name: 'Senethmi Wickramanayake',
     position: 'Vice Chairperson',
     image: ExcomImages.viceChairperson,
-    linkedin: '#'
+    linkedin: 'http://www.linkedin.com/in/senethmi-wickramanayake-800b3029b'
   },
   {
     id: 3,
     name: 'Mandira Polgampala',
     position: 'Secretary',
     image: ExcomImages.secretary,
-    linkedin: 'https://www.linkedin.com/in/mandira-polgampala-969a86281/'
+    linkedin: 'http://linkedin.com/in/mandira-polgampala-969a86281'
   },
   {
     id: 4,
@@ -42,21 +42,21 @@ const EXECUTIVE_COMMITTEE = [
     name: 'Thisula Lewhan',
     position: 'Webmaster',
     image: ExcomImages.Webmaster,
-    linkedin: '#'
+    linkedin: 'https://linkedin.com/in/thisula-lewhan'
   },
   {
     id: 6,
     name: 'Nethuli Dahamna Hettiarachchi',
     position: 'Asst. Secretary',
     image: ExcomImages.asstSecretary,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/nethuli-hettiarachchi-a25b86371/'
   },
   {
     id: 7,
     name: 'Zakee Nowfal',
     position: 'Asst. Treasurer',
     image: ExcomImages.asstTreasurer,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/mohammed-zakee'
   }
 ];
 
@@ -69,7 +69,7 @@ const CHAPTER_CHAIRS = [
     bgColor: '#E3F2FD',
     iconBg: '#2196F3',
     image: ChairImages.CS,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/hesaraperera/'
   },
   {
     id: 2,
@@ -78,7 +78,7 @@ const CHAPTER_CHAIRS = [
     bgColor: '#fdcaffff',
     iconBg: '#c70285ff',
     image: ChairImages.RAS,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/achira-karunarathne-401654366/'
   },
   {
     id: 3,
@@ -87,7 +87,7 @@ const CHAPTER_CHAIRS = [
     bgColor: '#F3E5F5',
     iconBg: '#9C27B0',
     image: ChairImages.IAS,
-    linkedin: '#'
+    linkedin: 'http://www.linkedin.com/in/shafkhan-mohammed'
   },
   {
     id: 4,
@@ -105,7 +105,7 @@ const CHAPTER_CHAIRS = [
     bgColor: '#FFF9C4',
     iconBg: '#FBC02D',
     image: ChairImages.PES,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/janitha-mayadunna-7720b7314?utm_source=share_via&utm_content=profile&utm_medium=member_ios'
   },
   {
     id: 6,
@@ -114,7 +114,7 @@ const CHAPTER_CHAIRS = [
     bgColor: '#c3ffb4ff',
     iconBg: '#6eff4aff',
     image: ChairImages.EMBS,
-    linkedin: '#'
+    linkedin: 'https://www.linkedin.com/in/dayanita-goonewardanerdane-9a29672ab?utm_source=share_via&utm_content=profile&utm_medium=member_android'
   }
 ];
 
@@ -124,34 +124,34 @@ const TEAMS_DATA = [
     id: 2,
     teamName: 'Public Visibility Team',
     members: [
-      { id: 1, name: 'Sithumya Dilruni', position: 'Team Lead', image: publicityImages.sithumya, linkedin: '#' },
-      { id: 2, name: 'Daham Jayakody', position: 'Team Member', image: publicityImages.daham, linkedin: '#' },
-      { id: 3, name: 'Yasith Tharuka', position: 'Team Member', image: publicityImages.yasith, linkedin: '#' }
+      { id: 1, name: 'Sithumya Dilruni', position: 'Team Lead', image: publicityImages.sithumya, linkedin: 'https://www.linkedin.com/in/sithumya-dilruni-6007652b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+      { id: 2, name: 'Daham Jayakody', position: 'Team Member', image: publicityImages.daham, linkedin: 'https://www.linkedin.com/in/daham-jayakody?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+      { id: 3, name: 'Yasith Tharuka', position: 'Team Member', image: publicityImages.yasith, linkedin: 'https://www.linkedin.com/in/yasith-tharuka' }
     ]
   },
   {
     id: 3,
     teamName: 'Finance Team',
     members: [
-      { id: 1, name: 'Yasiru Binuwara', position: 'Team Member', image: financeImages.yasiru, linkedin: '#' },
-      { id: 2, name: 'Savinath Udawaththa', position: 'Team Member', image: financeImages.savinath, linkedin: '#' }
+      { id: 1, name: 'Yasiru Binuwara', position: 'Team Member', image: financeImages.yasiru, linkedin: 'https://www.linkedin.com/in/yasiru-vitharanage-92a4b3363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
+      { id: 2, name: 'Savinath Udawaththa', position: 'Team Member', image: financeImages.savinath, linkedin: 'http://linkedin.com/in/savinath-udawaththa-b87061392' }
     ]
   },
   {
     id: 4,
     teamName: 'Membership Development Team',
     members: [
-      { id: 1, name: 'Thevinu Premathilaka', position: 'Team Lead', image: membershipImages.thevinu, linkedin: '#' },
-      { id: 2, name: 'Lakitha Keshan Gunawantha', position: 'Team Member', image: null, linkedin: '#' }
+      { id: 1, name: 'Thevinu Premathilaka', position: 'Team Lead', image: membershipImages.thevinu, linkedin: 'https://www.linkedin.com/in/thevinu-premathilaka-49583a269?utm_source=share_via&utm_content=profile&utm_medium=member_ios' },
+      { id: 2, name: 'Lakitha Keshan Gunawantha', position: 'Team Member', image: membershipImages.lakitha, linkedin: '#' }
     ]
   },
   {
     id: 5,
     teamName: 'Volunteer Management Team',
     members: [
-      { id: 1, name: 'Thavisha Dewmith', position: 'Team Lead', image: volunteerImages.thavisha, linkedin: '#' },
+      { id: 1, name: 'Thavisha Dewmith', position: 'Team Lead', image: volunteerImages.thavisha, linkedin: 'https://www.linkedin.com/in/thavisha-dewmith-25324b216/' },
       { id: 2, name: 'K.P Yeshan', position: 'Team Member', image: volunteerImages.yeshan, linkedin: '#' },
-      { id: 3, name: 'Sunjai Kajendrajith', position: 'Team Member', image: volunteerImages.sunjai, linkedin: '#' }
+      { id: 3, name: 'Sunjai Kajendrajith', position: 'Team Member', image: volunteerImages.sunjai, linkedin: 'https://www.linkedin.com/in/sunjai-kajendrajith-944a25215?utm_source=share_via&utm_content=profile&utm_medium=member_android' }
     ]
   }
 ];
@@ -193,6 +193,11 @@ function TeamSection({ teamName, members }) {
                 href={member.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => {
+                  if (member.linkedin === '#') {
+                    e.preventDefault();
+                  }
+                }}
                 className={`inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#0077B5] text-white transition-all duration-300 hover:bg-[#005885] ${
                   hoveredId === member.id ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
                 }`}
@@ -328,6 +333,11 @@ export default function CommitteePage() {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => {
+                        if (member.linkedin === '#') {
+                          e.preventDefault();
+                        }
+                      }}
                       className={`inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#0077B5] text-white transition-all duration-300 hover:bg-[#005885] ${
                         hoveredExecId === member.id ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
                       }`}
@@ -385,6 +395,11 @@ export default function CommitteePage() {
                       href={chair.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => {
+                        if (chair.linkedin === '#') {
+                          e.preventDefault();
+                        }
+                      }}
                       className={`inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#0077B5] text-white transition-all duration-300 hover:bg-[#005885] ${
                         hoveredChairId === chair.id ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
                       }`}
