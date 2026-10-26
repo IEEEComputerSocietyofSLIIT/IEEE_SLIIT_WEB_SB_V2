@@ -1,186 +1,102 @@
-import React from "react";
-import headerImg from "../../assets/images/home-image.png";
-import cardData from "../../components/HomeCards/CardData";
-import { HomeCards } from "../../components/HomeCards/HomeCards";
-import homeLogoImg from "../../assets/images/logo-home.png";
-import circleDesign from "../../assets/images/circle.png";
-import AwardCards from "../../components/AwardCards/AwardCards";
-import { AwardCardsInfo } from "../../components/AwardCards/awardsInfo";
-import BenefitCard from "../../components/BenefitCard/BenefitCard";
-import { benefitsData } from "../../components/BenefitCard/benefitsData.jsx";
+import { Link, useNavigate } from 'react-router-dom';
+import { Icon } from '../../components/SiteIcon';
+import { MEMBERSHIP_URL } from '../../components/siteLinks';
+import EventCard from '../../components/EventCard';
+import { sampleEvents } from '../eventsData';
+import cardData from '../../components/HomeCards/CardData';
+import { benefitsData } from '../../components/BenefitCard/benefitsData';
+import { AwardCardsInfo } from '../../components/AwardCards/awardsInfo';
+import hero from '../../assets/images/sample-hero.jpg';
+import mark from '../../assets/logos/IEEE.png';
+import ComSoc from '../../assets/logos/ComSoc.png';
+import career from '../../assets/images/sample-career.jpg';
+import industry from '../../assets/images/sample-industry.jpg';
+import networking from '../../assets/images/sample-networking.jpg';
+import leadership from '../../assets/images/sample-leadership.jpg';
+import hackathon from '../../assets/images/sample-hackathon.jpg';
+import global from '../../assets/images/sample-global.jpg';
+import CS from '../../assets/logos/CS.png';
+import RAS from '../../assets/logos/RAS.png';
+import IAS from '../../assets/logos/IAS.png';
+import PES from '../../assets/logos/PES.png';
+import WIE from '../../assets/logos/WIE.png';
+import EMBS from '../../assets/logos/EMBS.png';
 
-export const Home = () => {
-  return (
-    <>
-      {/* Hero Section */}
-      <div className="relative w-full overflow-hidden">
-        {/* Background Image Container */}
-        <div className="absolute inset-0 w-full h-full min-h-[700px] sm:min-h-[600px] md:h-[70vh] lg:h-[90vh] md:max-h-[650px] lg:max-h-[750px]">
-          <img 
-            src={headerImg} 
-            alt="Home-Header-Image" 
-            className="w-full h-full object-cover"
-          />
-          {/* Dark gradient overlay for text visibility */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
+const benefitImages = [career, industry, networking, leadership, hackathon, global];
+const benefits = benefitsData.map((benefit, index) => [benefit.title, benefit.description, benefitImages[index]]);
+const chapters = [{
+  code: 'CS',
+  name: 'Computer Society',
+  logo: CS,
+  website: 'https://cs.ieeesliit.com/',
+  instagram: 'https://www.instagram.com/ieeecssliit/'
+}, {
+  code: 'RAS',
+  name: 'Robotics & Automation Society',
+  logo: RAS,
+  website: 'https://ras.ieeesliit.com/'
+}, {
+  code: 'IAS',
+  name: 'Industry Applications Society',
+  logo: IAS,
+  website: 'https://ias.ieeesliit.com/',
+  instagram: 'https://www.instagram.com/ias_sliit/'
+}, {
+  code: 'PES',
+  name: 'Power & Energy Society',
+  logo: PES,
+  website: 'https://pes.ieeesliit.com/',
+  instagram: 'https://www.instagram.com/ieeepessliit/'
+}, {
+  code: 'WIE',
+  name: 'Women in Engineering Affinity Group',
+  logo: WIE,
+  website: 'https://wie.ieeesliit.com/',
+  instagram: 'https://www.instagram.com/wie_sliit/'
+}, {
+  code: 'EMBS',
+  name: 'Engineering in Medicine & Biology Society',
+  logo: EMBS,
+  website: 'https://www.embs.org/',
+  instagram: 'https://www.instagram.com/embs_sliit/'
+}, {
+  code: 'ComSoc',
+  logo: ComSoc,
+  name: 'Communications Society',
+  website: 'https://www.comsoc.org/'
+}];
+export default function Home() {
+  const navigate = useNavigate();
+  return <article data-page="home">
+      <section className="hero wrap" aria-labelledby="home-heading">
+        <div className="hero-grid">
+          <div className="hero-copy">
+            <div className="eyebrow">IEEE Student Branch of SLIIT</div>
+            <h1 id="home-heading">Big ideas<br />Real connections<br /><em>Your next chapter</em></h1>
+            <p className="intro">A community for the curious. Build your skills, find your people, and turn what you learn into something that matters.</p>
+            <div className="actions"><a className="button" href={MEMBERSHIP_URL}>Join IEEE </a><Link className="button light" to="/#journey">How to start </Link></div>
+            <div className="hero-note"><span className="dot" aria-hidden="true"></span>Open to every curious mind at SLIIT</div>
+          </div>
+          <Link className="hero-photo" to="/events" aria-label="Explore IEEE SLIIT events and gallery"><img decoding="async" src={hero} width="1376" height="768" loading="eager" fetchPriority="high" alt="Illustrative student community celebrating at a technology event" /><div className="photo-caption"><div><small>Learn together Go further</small><strong>This is where you belong</strong></div></div></Link>
         </div>
-
-        {/* Content */}
-        <div className="relative z-10 w-full px-4 sm:px-6 py-8 sm:py-12 md:py-16 lg:py-0 min-h-[700px] sm:min-h-[600px] md:h-[70vh] lg:h-[90vh] md:max-h-[650px] lg:max-h-[750px] flex items-center justify-center">
-          <div className="flex flex-col items-center justify-center text-center w-full">
-            {/* Title */}
-            <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-wide drop-shadow-2xl text-white">
-                IEEE Student
-              </h1>
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-tight tracking-wide drop-shadow-2xl text-[#0FB2B2]">
-                Branch
-              </h1>
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-wide drop-shadow-2xl text-white">
-                of SLIIT
-              </h1>
-            </div>
-
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-5 sm:mb-6 md:mb-8 lg:mb-10 w-full max-w-xs sm:max-w-none sm:w-auto">
-              <button 
-                onClick={() => {window.open("https://forms.fillout.com/t/pZwz6iZ95hus", "_blank");}}
-                className="bg-white text-[#00629B] px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-bold text-sm sm:text-base md:text-lg shadow-lg hover:bg-[#0FB2B2] hover:cursor-pointer hover:text-white transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
-              >
-                Join Now
-              </button>
-              <button className="bg-transparent text-white border-2 border-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-bold text-sm sm:text-base md:text-lg hover:bg-white hover:text-[#00629B] transform hover:-translate-y-1 transition-all duration-300 shadow-lg w-full sm:w-auto">
-                Learn More
-              </button>
-            </div>
-
-            {/* Cards - Responsive Layout */}
-            <div className="w-full max-w-6xl px-2">
-              {/* Mobile: 2 columns grid */}
-              <div className="grid grid-cols-2 gap-2 sm:gap-3 md:hidden">
-                {cardData.map((item, index) => (
-                  <div key={index} className="w-full min-w-0">
-                    <HomeCards heading={item.heading} count={item.count} />
-                  </div>
-                ))}
-              </div>
-              
-              {/* Tablet and Desktop: Original flex wrap layout */}
-              <div className="hidden md:flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8">
-                {cardData.map((item, index) => (
-                  <HomeCards key={index} heading={item.heading} count={item.count} />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Welcome Section */}
-      <div className="bg-gradient-to-b from-gray-50 to-white py-10 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Title */}
-          <div className="text-center md:text-left mb-8 sm:mb-10 md:mb-14">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0D1C1C] leading-tight">
-              Welcome To
-            </h1>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#00629B] leading-tight">
-              IEEE Student Branch
-            </h1>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0D1C1C] leading-tight">
-              of SLIIT
-            </h1>
-          </div>
-
-          {/* Content Card */}
-          <div className="relative bg-white rounded-xl sm:rounded-2xl border border-gray-200 shadow-2xl p-6 sm:p-8 md:p-10 lg:p-12 max-w-5xl mx-auto backdrop-blur-sm overflow-hidden">
-            <img 
-              src={homeLogoImg} 
-              alt="IEEE-Logo" 
-              className="w-24 h-20 sm:w-28 sm:h-24 md:w-32 md:h-28 mx-auto mb-4 sm:mb-6"
-            />
-            <p className="text-sm sm:text-base md:text-lg leading-relaxed text-center text-gray-700">
-              Since our inception in 2011, we have been one of the most famous
-              student chapters in Sri Lanka. Pioneering a variety of projects
-              across multiple fields, including technical innovation and community
-              service, our student members participate in seminars, career support
-              workshops in science and technical areas, and personal development
-              programs to enhance their achievements.
-            </p>
-            
-            {/* Decorative circles */}
-            <img
-              className="hidden lg:block absolute -top-12 -right-8 w-24 h-24 opacity-20"
-              src={circleDesign}
-              alt="Circle-Design"
-            />
-            <img
-              className="hidden lg:block absolute -bottom-16 -left-12 w-24 h-24 opacity-20"
-              src={circleDesign}
-              alt="Circle-Design"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Benefits Section */}
-      <div className="bg-gradient-to-br from-[#00629B]/5 via-[#0FB2B2]/5 to-[#00629B]/5 py-10 sm:py-12 md:py-16 lg:py-20 xl:py-24 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-10 sm:mb-12 md:mb-16">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#00629B] mb-3 sm:mb-4 md:mb-6 px-2">
-              Join IEEE Student Branch at SLIIT
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-12 leading-relaxed px-4">
-              Become a part of the world's largest technical professional
-              organization dedicated to advancing technology for humanity.
-            </p>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#00629B] px-2">
-              Why Join IEEE at SLIIT?
-            </h2>
-          </div>
-
-          {/* Benefits Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {benefitsData.map((benefit, index) => (
-              <BenefitCard
-                key={index}
-                icon={benefit.icon}
-                title={benefit.title}
-                description={benefit.description}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Achievements Section (commented out in original) */}
-      {/* <div className="bg-white py-10 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 px-2">
-              Our Achievements
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-gray-700 max-w-2xl mx-auto px-4">
-              Celebrating milestones that showcase our dedication to excellence,
-              innovation, and community impact
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {AwardCardsInfo.map((award, index) => (
-              <AwardCards
-                key={index}
-                icon={award.icon}
-                year={award.year}
-                title={award.title}
-                organization={award.organization}
-                description={award.description}
-              />
-            ))}
-          </div>
-        </div>
-      </div> */}
-    </>
-  );
-};
+        <div className="stats"><p className="stats-label">One community<br />A world of possibilities</p>{cardData.map(stat => <div className="stat" key={stat.heading}><strong>{stat.count.endsWith('+') ? <>{stat.count.slice(0, -1)}<span>+</span></> : stat.count}</strong><small>{stat.heading}</small></div>)}</div>
+      </section>
+      <section className="section wrap" aria-labelledby="why-heading"><div className="section-head"><div><div className="eyebrow">More than a membership</div><h2 id="why-heading">Why Join IEEE at SLIIT</h2></div><p>IEEE is not just a society, it is an experience</p></div><div className="value-grid" id="values">{benefits.map(([title, copy, image]) => <article className="value-card" key={title}><img decoding="async" src={image} alt={title} loading="lazy" /><div className="value-content"><span className="card-category">The IEEE experience</span><h3>{title}</h3><p>{copy}</p></div></article>)}</div></section>
+      <section className="section chapters-section" aria-labelledby="chapters-heading"><div className="wrap"><div className="section-head"><div><div className="eyebrow">Find your people</div><h2 id="chapters-heading">Our Chapters</h2></div><p>From intelligent machines to a healthier planet—find the community that shares your curiosity</p></div><div className="chapter-branch"><img decoding="async" className="branch-lockup" src={mark} alt="SLIIT IEEE Student Branch" /></div><div className="chapter-grid" id="chapters">{chapters.map(chapter => <article className="chapter" key={chapter.code} style={{'--chapter-color': ({CS: '#F5A623', RAS: '#A51C5B', IAS: '#188448', PES: '#4D8C34', WIE: '#82368C', EMBS: '#92368B', ComSoc: '#0077B6'})[chapter.code]}}>{chapter.logo ? <div className="chapter-logo"><img decoding="async" src={chapter.logo} alt={chapter.name + ' logo'} loading="lazy" /></div> : <div className="chapter-logo"><span className="chapter-monogram" style={{
+                color: 'var(--ocean)'
+              }}>{chapter.code}</span></div>}<h3>{chapter.name}</h3><div className="chapter-actions"><a href={chapter.website} target="_blank" rel="noreferrer" aria-label={chapter.name + ' website'}><Icon name="globe" /></a><a href={chapter.instagram || 'https://linktr.ee/ieeesliit'} target="_blank" rel="noreferrer" aria-label={chapter.instagram ? chapter.name + ' Instagram' : chapter.name + ' social directory'}><Icon name="instagram" /></a></div></article>)}</div></div></section>
+      <section className="section wrap" aria-labelledby="flagship-heading"><div className="section-head"><div><div className="eyebrow">Ideas into experiences</div><h2 id="flagship-heading">Flagship Events</h2></div><Link to="/events" className="text-link">Explore events & gallery </Link></div><div className="flagships" id="flagships">{sampleEvents.map(event => <EventCard key={event.id} event={event} onSelect={() => navigate('/events?event=' + event.id)} />)}</div></section>
+      <section className="journey-shell" id="journey" aria-labelledby="journey-heading"><div className="wrap journey">
+        <div className="journey-intro"><div className="eyebrow">How to start</div><h2 id="journey-heading">Start your IEEE journey today</h2><p>Bring your curiosity and a willingness to contribute. From your first event to a global community, there’s room to grow at every step.</p><div className="actions"><a className="button" href={MEMBERSHIP_URL}>Join IEEE </a><Link className="button light" to="/contact">Contact Us</Link></div></div>
+        <ol className="journey-steps">
+          <li className="step"><h3>Start as a Volunteer</h3><p>Help bring an event to life through registration, media, or on-the-day support. Ask our team about your first opportunity.</p></li>
+          <li className="step"><h3>Volunteer in an Organizing Committee (OC)</h3><p>Contribute to logistics, public relations, design, or finance. Build practical experience with a team that shares your enthusiasm.</p></li>
+          <li className="step"><h3>Become an Official IEEE SLIIT Member</h3><p>Make your connection official and explore the membership opportunities available through IEEE and its technical societies.</p></li>
+          <li className="step"><h3>Join the IEEE SLIIT Executive Committee</h3><p>Take the next step in student leadership and help shape your branch or chapter. <Link to="/committee">Meet the current committee →</Link></p></li>
+          <li className="step"><h3>Grow into the IEEE Sri Lanka Section</h3><p>Connect with student activities, Young Professionals, and technical communities beyond campus.</p><div className="section-badges"><span>SLSAC</span><span>Young Professionals</span><span>Technical Chapters</span></div></li>
+          <li className="step"><h3>Connect with the Global IEEE Community</h3><p>Exchange ideas and discover opportunities to learn, contribute, and collaborate across borders.</p></li>
+        </ol>
+      </div></section>
+      <section className="section wrap" aria-labelledby="awards-heading"><div className="eyebrow">A shared sense of pride</div><h2 id="awards-heading">Awards & Recognitions</h2><div className="awards">{AwardCardsInfo.map(award => <article className="award" key={award.title}><div className="award-mark" aria-hidden="true">{award.icon}</div><div><h3>{award.title}</h3>{award.description && <p>{award.description}</p>}</div></article>)}</div></section>
+    </article>;
+}
