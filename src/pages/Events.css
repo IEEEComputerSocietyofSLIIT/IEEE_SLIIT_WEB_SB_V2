@@ -1,0 +1,3 @@
+.event-oc { margin-top: 18px; font-size: 12px; padding: 8px 14px; min-height: 44px; }
+.events-grid > .empty-state { grid-column: 1 / -1; }
+html { scrollbar-gutter: stable; }

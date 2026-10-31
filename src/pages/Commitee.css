@@ -1,0 +1,141 @@
+.committee-team{margin:55px 0}.person .portrait img{width:100%;height:100%;object-fit:contain;object-position:center 20%}.counselor .portrait img{width:100%;height:100%;max-height:340px;object-fit:contain}.committee-team .section-head h2{font-size:clamp(25px,3vw,36px)}.web-team-photo{width:100%;max-height:540px;object-fit:cover;border-radius:22px}
+
+/* White frame and a dark glass overlay keep names legible on every portrait. */
+[data-page="committee"] .person {
+  border: 3px solid #fff;
+  border-radius: 30px;
+  box-shadow: 0 12px 28px rgba(17,40,80,.16);
+}
+[data-page="committee"] .person .portrait img { object-fit: cover; object-position: center top; }
+[data-page="committee"] .person::after {
+  inset: 25% 0 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(8,23,45,.35) 45%, rgba(8,23,45,.94) 100%);
+}
+[data-page="committee"] .person-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  border: 0;
+  border-radius: 0;
+  background: rgba(8,23,45,.12);
+  box-shadow: none;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+[data-page="committee"] .person-copy h3 { color: #fff; font-size: 20px; }
+[data-page="committee"] .person-copy .member-role {
+  order: -1;
+  color: #d5e9f4;
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+[data-page="committee"] .person-copy .member-faculty { color: #d5e9f4; }
+[data-page="committee"] .linkedin-icon { background: rgba(8,23,45,.5); color: #fff; }
+[data-page="committee"] .linkedin-icon:hover { background: var(--ocean); }
+[data-page="committee"] .linkedin-icon svg { fill: currentColor; stroke: none; }
+@media(max-width:720px) {
+  [data-page="committee"] .person { border-radius: 24px; }
+  [data-page="committee"] .person-copy { padding: 18px 12px; }
+  [data-page="committee"] .person-copy h3 { font-size: 17px; }
+}
+
+/* Five compact cards across on desktop, with fewer columns on smaller screens. */
+[data-page="committee"] .people-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+[data-page="committee"] .person {
+  height: 340px;
+  border-radius: 24px;
+  min-width: 0;
+}
+[data-page="committee"] .person-copy { padding: 18px 14px; }
+[data-page="committee"] .person-copy h3 { font-size: 16px; line-height: 1.35; }
+[data-page="committee"] .person-copy .member-role { font-size: 10px; letter-spacing: .07em; }
+[data-page="committee"] .linkedin-icon {
+  width: 36px;
+  height: 36px;
+  top: 10px;
+  right: 10px;
+  border-radius: 10px;
+}
+[data-page="committee"] .linkedin-icon::before { content: ""; position: absolute; inset: -4px; }
+[data-page="committee"] .linkedin-icon svg { width: 17px; height: 17px; }
+
+/* The portrait fills its panel; counsellor information is vertically centered. */
+[data-page="committee"] .counselor {
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+  align-items: stretch;
+}
+[data-page="committee"] .counselor .portrait {
+  min-height: 0;
+  aspect-ratio: 1;
+  display: block;
+}
+[data-page="committee"] .counselor .portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  object-position: center 20%;
+}
+[data-page="committee"] .counselor-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: clamp(24px, 4vw, 52px);
+}
+[data-page="committee"] .counselor-copy h2 { margin: 0; line-height: 1.3; }
+[data-page="committee"] .counselor-copy p { margin: 0; max-width: 550px; line-height: 1.7; }
+[data-page="committee"] .counselor-copy .counselor-role { font-weight: 600; color: var(--ocean); }
+@media (max-width: 1099px) {
+  [data-page="committee"] .people-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  [data-page="committee"] .person { height: 360px; }
+}
+@media (max-width: 760px) {
+  [data-page="committee"] .people-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  [data-page="committee"] .person { height: 330px; }
+  [data-page="committee"] .counselor { grid-template-columns: 1fr; }
+  [data-page="committee"] .counselor .portrait { height: auto; width: 100%; max-width: 380px; margin: auto; }
+}
+@media (max-width: 420px) {
+  [data-page="committee"] .people-grid { grid-template-columns: 1fr; }
+  [data-page="committee"] .person { height: 420px; }
+}
+
+/* One shared treatment for portraits, text panels and LinkedIn controls. */
+[data-page="committee"] .person {
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+[data-page="committee"] .person .portrait img { transition: transform .35s ease; }
+[data-page="committee"] .person-copy {
+  height: 128px;
+  justify-content: flex-end;
+  padding: 16px 14px;
+}
+[data-page="committee"] .person-copy h3 { min-height: 2.7em; margin: 0; }
+[data-page="committee"] .person-copy .member-role { margin: 0; line-height: 1.4; }
+[data-page="committee"] .person:hover,
+[data-page="committee"] .person:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--cyan);
+  box-shadow: 0 16px 32px #11285026;
+}
+[data-page="committee"] .person:hover .portrait img,
+[data-page="committee"] .person:focus-within .portrait img { transform: scale(1.035); }
+@media (prefers-reduced-motion: reduce) {
+  [data-page="committee"] .person,
+  [data-page="committee"] .person .portrait img { transition: none; }
+  [data-page="committee"] .person:hover,
+  [data-page="committee"] .person:focus-within,
+  [data-page="committee"] .person:hover .portrait img,
+  [data-page="committee"] .person:focus-within .portrait img { transform: none; }
+}
