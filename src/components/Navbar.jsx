@@ -24,7 +24,7 @@ export default function Navbar() {
       <NavLink to="/" end onClick={() => setOpen(false)}>Home</NavLink>
       <Link to="/events" aria-current={pathname === '/events' ? 'page' : undefined} onClick={() => setOpen(false)}>Events &amp; Gallery</Link>
       <NavLink to="/committee" onClick={() => setOpen(false)}>Committee</NavLink><NavLink to="/contact" onClick={() => setOpen(false)}>Contact</NavLink>
-    </nav><a className="button header-cta" href={MEMBERSHIP_URL}>Join IEEE </a>
+    </nav><Link className="button header-cta" to={MEMBERSHIP_URL}>Join IEEE </Link>
     <button ref={button} className="menu" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="navigation" aria-label={open ? 'Close navigation' : 'Open navigation'}>{open ? '×' : '☰'}</button>
   </div></header>;
 }

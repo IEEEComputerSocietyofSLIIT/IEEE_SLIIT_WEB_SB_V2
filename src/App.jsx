@@ -1,13 +1,14 @@
 import { lazy, Suspense, useEffect } from 'react';
-import { Navigate, Routes, Route, useLocation, useParams } from 'react-router-dom';
+import { Navigate, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
-import { HomeIntro } from './components/HomeIntro';
 import Home from './pages/Home/Home';
-import Events from './pages/Events';
-import { galleryEvents } from './pages/eventsData';
-import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import ErrorBoundary from './components/ErrorBoundary';
+
+const Events = lazy(() => import('./pages/Events'));
+const Join = lazy(() => import('./pages/Join'));
+const Contact = lazy(() => import('./pages/Contact'));
 const SBCommittee = lazy(() => import('./pages/Commitee'));
 function PagePosition() {
   const {
@@ -19,7 +20,8 @@ function PagePosition() {
       '/': 'Home',
       '/events': 'Events & Gallery',
       '/committee': 'Committee',
-      '/contact': 'Contact'
+      '/contact': 'Contact',
+      '/join': 'Join IEEE'
 
     };
     document.title = (names[pathname] || 'Page not found') + ' | IEEE SLIIT';
@@ -38,15 +40,30 @@ function PagePosition() {
   return null;
 }
 function LegacyRedirect({ to }) { const { search, hash } = useLocation(); return <Navigate to={to + search + hash} replace />; }
-function EventRedirect() { const { eventId } = useParams(); const id = eventId === 'abc' ? 'v2-1' : eventId; return <Navigate to={galleryEvents.some(event => event.id === id) ? '/events?event=' + encodeURIComponent(id) : '/events'} replace />; }
 export default function App() {
-  return <><PagePosition /><HomeIntro /><a className="skip" href="#main">Skip to content</a><Navbar />
-    <main id="main" tabIndex={-1}><Suspense fallback={<p className="wrap status" role="status">Loading page…</p>}><Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/events" element={<Events />} />
-      <Route path="/committee" element={<SBCommittee />} /><Route path="/contact" element={<Contact />} />
-      <Route path="/news" element={<LegacyRedirect to="/events" />} /><Route path="/contact-us" element={<LegacyRedirect to="/contact" />} /><Route path="/about" element={<Navigate to="/#why-heading" replace />} /><Route path="/chapters" element={<Navigate to="/#chapters" replace />} /><Route path="/events/:eventId" element={<EventRedirect />} />
-      <Route path="*" element={<section className="wrap section"><h1>Page not found</h1><p>This page may have moved. Use the navigation to explore our community.</p></section>} />
-    </Routes></Suspense></main><Footer />
+  return <>
+    <PagePosition />
+    <a className="skip" href="#main">Skip to content</a>
+    <Navbar />
+    <ErrorBoundary>
+      <main id="main" tabIndex={-1}>
+        <Suspense fallback={<p className="wrap status" role="status">Loading page…</p>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/join" element={<Join />} />
+            <Route path="/committee" element={<SBCommittee />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/news" element={<LegacyRedirect to="/events" />} />
+            <Route path="/contact-us" element={<LegacyRedirect to="/contact" />} />
+            <Route path="/about" element={<Navigate to="/#why-heading" replace />} />
+            <Route path="/chapters" element={<Navigate to="/#chapters" replace />} />
+            <Route path="/events/:eventId" element={<Navigate to="/events" replace />} />
+            <Route path="*" element={<section className="wrap section"><h1>Page not found</h1><p>This page may have moved. Use the navigation to explore our community.</p></section>} />
+          </Routes>
+        </Suspense>
+      </main>
+    </ErrorBoundary>
+    <Footer />
   </>;
 }

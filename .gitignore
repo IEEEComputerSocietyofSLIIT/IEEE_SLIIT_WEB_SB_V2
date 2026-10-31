@@ -23,10 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 
-package-lock.json
-
 # Environment variables
 env
+.env
 .env.*
 !.env.example
 .npm-cache/
