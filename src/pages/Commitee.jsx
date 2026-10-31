@@ -8,6 +8,7 @@ import financeImages from '../assets/images/Teams/Finance';
 import publicityImages from '../assets/images/Teams/Publicity';
 import membershipImages from '../assets/images/Teams/MembershipDevelop';
 import editorialImages from '../assets/images/Teams/Editorial';
+import webImages from '../assets/images/Teams/web';
 
 // Existing V2 data for Executive Committee
 const EXECUTIVE_COMMITTEE = [
@@ -117,6 +118,13 @@ const CHAPTER_CHAIRS = [
     iconBg: '#6eff4aff',
     image: ChairImages.EMBS,
     linkedin: 'https://www.linkedin.com/in/dayanita-goonewardanerdane-9a29672ab?utm_source=share_via&utm_content=profile&utm_medium=member_android'
+  },
+  {
+    id: 7,
+    name: 'Hari Branavan',
+    chapter: 'IEEE Communications Society',
+    image: ChairImages.COMSOC,
+    linkedin: 'https://www.linkedin.com/in/hari-branavan-arulnathan'
   }
 ];
 
@@ -143,8 +151,7 @@ const TEAMS_DATA = [
     id: 4,
     teamName: 'Membership Development Team',
     members: [
-      { id: 1, name: 'Thevinu Premathilaka', position: 'Team Lead', image: membershipImages.thevinu, linkedin: 'https://www.linkedin.com/in/thevinu-premathilaka-49583a269?utm_source=share_via&utm_content=profile&utm_medium=member_ios' },
-      { id: 2, name: 'Lakitha Keshan Gunawantha', position: 'Team Member', image: membershipImages.lakitha, linkedin: '#' }
+      { id: 2, name: 'Lakitha Keshan Gunawantha', position: 'Team Lead', image: membershipImages.lakitha, linkedin: '#' }
     ]
   },
   {
@@ -160,29 +167,40 @@ const TEAMS_DATA = [
     id: 6,
     teamName: 'Editorial Team',
     members: [
-      { id: 1, name: 'Isira Sahanjith', position: 'Team Lead', image: editorialImages.isira, linkedin: 'http://www.linkedin.com/in/isira-sahanjith' },
+      { id: 3, name: 'Supun Dharmaratne', position: 'Team Lead', image: editorialImages.supun, linkedin: 'https://www.linkedin.com/in/supun-dharmaratne-41b7ab379' },
+      { id: 1, name: 'Jayashan', position: 'Team Member', image: editorialImages.jayashan, linkedin: 'https://www.linkedin.com/in/jayashanmanodya' },
       { id: 2, name: 'Shagash Karthigeson', position: 'Team Member', image: editorialImages.shagash, linkedin: 'https://www.linkedin.com/in/shagash-karthigeson?utm_source=share_via&utm_content=profile&utm_medium=member_ios' },
-      { id: 3, name: 'Supun Dharmaratne', position: 'Team Member', image: editorialImages.supun, linkedin: 'https://www.linkedin.com/in/supun-dharmaratne-41b7ab379' }
+    ]
+  },
+  {
+    id: 7,
+    teamName: 'Web team',
+    members: [
+      { id: 1, name: 'Rishindu Weeramanthri', position: 'Team Lead', image: webImages.rishindu, linkedin: null },
+      { id: 2, name: 'Kaveen Hasanga', position: 'Team Member', image: webImages.kaveen, linkedin: null },
+      { id: 3, name: 'Punsith Rankalana', position: 'Team Member', image: webImages.punsith, linkedin: null },
+      { id: 4, name: 'Risikesan Jagatheesan', position: 'Team Member', image: webImages.risikesan, linkedin: null },
+      { id: 5, name: 'Shisham Ahamed', position: 'Team Member', image: webImages.shisham, linkedin: null }
     ]
   }
 ];
 
 // Branch Counsellor data
 const BRANCH_COUNSELLOR = {
-  name: 'Prof. Pradeep Abeygunawardana',
+  name: 'Prof. Anuradha Jayakody',
   position: 'Branch Counsellor',
-  institution: 'Dean | Faculty of Computing | Information Technology',
-  image: ExcomImages.proffesor
+  institution: 'Head of the Department of Computer Systems Engineering | Faculty of Computing',
+  image: ExcomImages.professor
 };
 
 
 function MemberCard({ member }) {
   const profile = typeof member.linkedin === 'string' && /^https?:\/\//.test(member.linkedin) ? member.linkedin.replace(/^http:/, 'https:') : null;
-  return <article className="person"><div className="portrait"><img src={member.image} alt={member.name} loading="lazy" decoding="async" /></div><a className="linkedin-icon" href={profile || 'https://www.linkedin.com/search/results/people/?keywords=' + encodeURIComponent(member.name)} target="_blank" rel="noopener noreferrer" aria-label={profile ? member.name + ' on LinkedIn' : 'Find ' + member.name + ' on LinkedIn'}><Icon name="linkedin" /></a><div className="person-copy"><h3>{member.name}</h3><p className="member-role">{member.position || member.chapter}</p></div></article>;
+  return <article className="person"><div className="portrait"><img src={member.image} alt={member.name} loading="lazy" decoding="async" referrerPolicy="no-referrer" onError={({ currentTarget }) => { currentTarget.onerror = null; currentTarget.style.opacity = '0.5'; }} /></div><a className="linkedin-icon" href={profile || 'https://www.linkedin.com/search/results/people/?keywords=' + encodeURIComponent(member.name)} target="_blank" rel="noopener noreferrer" aria-label={profile ? member.name + ' on LinkedIn' : 'Find ' + member.name + ' on LinkedIn'}><Icon name="linkedin" /></a><div className="person-copy"><h3>{member.name}</h3><p className="member-role">{member.position || member.chapter}</p></div></article>;
 }
 function TeamSection({ title, members }) {
   return <section className="committee-team"><div className="section-head"><h2>{title}</h2></div><div className="people-grid">{members.map(member => <MemberCard key={member.id} member={member} />)}</div></section>;
 }
 export default function CommitteePage() {
-  return <article data-page="committee"><div className="wrap"><header className="page-heading"><div className="page-kicker">Student led Community driven</div><div className="eyebrow">The committee</div><h1>The people behind<br />the possibilities</h1><p>Meet the students who bring our community together</p></header><section className="counselor"><div className="portrait"><img src={BRANCH_COUNSELLOR.image} alt={BRANCH_COUNSELLOR.name} decoding="async" /></div><div className="counselor-copy"><div className="eyebrow">{BRANCH_COUNSELLOR.position}</div><h2>{BRANCH_COUNSELLOR.name}</h2><p>{BRANCH_COUNSELLOR.institution}</p></div></section><TeamSection title="Executive committee" members={EXECUTIVE_COMMITTEE} /><TeamSection title="Chapter chairpersons" members={CHAPTER_CHAIRS} />{TEAMS_DATA.map(team => <TeamSection key={team.id} title={team.teamName} members={team.members} />)}<aside className="oc-banner"><div><h3>There’s a future leader in you</h3><p>Begin as a volunteer and discover where the experience takes you</p></div><Link className="button" to="/contact?subject=volunteer">Get involved</Link></aside></div></article>;
+  return <article data-page="committee"><div className="wrap"><header className="page-heading"><h1>The people behind<br />the possibilities</h1><p>Meet the students who bring our community together</p></header><section className="counselor"><div className="portrait"><img src={BRANCH_COUNSELLOR.image} alt={BRANCH_COUNSELLOR.name} decoding="async" /></div><div className="counselor-copy"><p className="counselor-role">{BRANCH_COUNSELLOR.position}</p><h2>{BRANCH_COUNSELLOR.name}</h2><p>{BRANCH_COUNSELLOR.institution}</p></div></section><TeamSection title="Executive committee" members={EXECUTIVE_COMMITTEE} /><TeamSection title="Chapter chairpersons" members={CHAPTER_CHAIRS} />{TEAMS_DATA.map(team => <TeamSection key={team.id} title={team.teamName} members={team.members} />)}<aside className="oc-banner"><div><h3>There’s a future leader in you</h3><p>Begin as a volunteer and discover where the experience takes you</p></div><Link className="button" to="/contact?subject=volunteer">Get involved</Link></aside></div></article>;
 }
