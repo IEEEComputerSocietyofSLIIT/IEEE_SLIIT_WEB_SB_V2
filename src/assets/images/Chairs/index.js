@@ -4,6 +4,7 @@ import PES from "./PES.jpg";
 import WIE from "./WIE.jpg";
 import EMBS from "./EMBS.jpg";
 import RAS from "./RAS.jpg";
+import COMSOC from "./COMSOC.jpeg";
 
 const ChairImages = {
   IAS,
@@ -12,6 +13,7 @@ const ChairImages = {
   WIE,
   EMBS,
   RAS,
+  COMSOC,
 };
 
 export default ChairImages;

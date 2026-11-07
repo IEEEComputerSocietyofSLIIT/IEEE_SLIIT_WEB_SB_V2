@@ -1,16 +1,16 @@
 
 const cardData = [
     {
-        heading: "Active Members",
+        heading: "Members",
         count: "500+",
     },
     {
-        heading: "Active Chapters",
-        count: "6+",
+        heading: "Events per Year",
+        count: "20+",
     },
     {
-        heading: "Projects Completed",
-        count: "100+",
+        heading: "Active Chapters",
+        count: "7",
     }
 ]
 
